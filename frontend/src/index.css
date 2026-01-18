@@ -1,0 +1,153 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f9fb;
+  color: #333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* CSS Variables */
+:root {
+  --primary-color: #4f46e5; /* Indigo */
+  --secondary-color: #ec4899; /* Pink */
+  --background-color: #ffffff;
+  --border-color: #e5e7eb;
+  --text-color: #1f2937;
+  --label-color: #6b7280;
+  --handle-color: #6366f1;
+  --handle-hover-color: #4338ca;
+}
+
+/* Node Styling */
+.react-flow__node {
+  border-radius: 8px;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: var(--text-color);
+  min-width: 200px;
+}
+
+.react-flow__node:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary-color);
+}
+
+.react-flow__node.selected {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* BaseNode Internal Structure */
+.node-header {
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.node-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Form Elements */
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--label-color);
+}
+
+input[type="text"],
+select,
+textarea {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+textarea {
+  resize: none;
+  font-family: inherit;
+}
+
+/* Handle Styling */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: var(--handle-color);
+  border: 2px solid #fff;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.react-flow__handle:hover {
+  background: var(--handle-hover-color);
+  transform: scale(1.2);
+}
+
+/* Specific Node Styles */
+.note-node-content {
+    background-color: #fffae3;
+    border-radius: 8px;
+}
+.note-node-content .node-header {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Toolbar Styling */
+/* Assuming the toolbar is wrapped in a container that we can style if needed, 
+   but currently it's inline styles in toolbar.js. 
+   We can add a class to the DraggableNodes if acceptable, or just rely on global styling. 
+   Let's just leave it for now as the user didn't ask to change toolbar implementation details deeply. 
+   But the buttons or items in toolbar could use some pizazz. */
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button[type="submit"]:hover {
+    background-color: #4338ca;
+}
